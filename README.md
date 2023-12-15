@@ -25,7 +25,6 @@ When you get the credentials file rename it to "credentials.json" then put it in
 ## Run the setup.py file
 1. Run the setup.py and input information needed
 
-
 ## Optional
 1. Setup url for api for the personal chatbot </br>
 1.1. in the /etc/systemd/system/ollama.service file, you may also add
@@ -35,9 +34,6 @@ When you get the credentials file rename it to "credentials.json" then put it in
 ## Required
 1. voice_id
 2. microphone_index
-
-run and if you would like to setup all settings select 5 then select 6
-`setup.py`
 
 ## Optional
 **Linux**
