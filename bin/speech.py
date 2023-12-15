@@ -2,9 +2,10 @@ import bin.google_calendar as gcal
 import json
 import openai
 import bin.text_to_speech as tts
+# import bin.chatbot_paramiko as chatbot
 import bin.chatbot as chatbot
 
-wallace = chatbot.ChatBot("XXXXXXXXXXX") # Input your model name here
+wallace = chatbot.ChatBot("XXXXXXXXXX") # Input your model name here
 
 def calendar(text, nums):
     """Handles calendar related commands in the given text using Google Calendar API.
@@ -49,12 +50,14 @@ def format_event_string(events):
     events (list): List of events to be formatted."""
     event_string = ""
     # Iterate over events and concatenate them into a single string
-    for event in events:
-        # Format differently for the first event
-        if events.index(event) == 0:
+    for i, event in enumerate(events):
+        if i < len(events) - 2:
             event_string += event + ", next event is "
         else:
-            event_string += event + ", then "
+            if i == len(events) - 1:
+                event_string += event
+            else:
+                event_string += event + ", then "
     return event_string
 
 def basic_chat(text):
